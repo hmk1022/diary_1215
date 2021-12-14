@@ -1,16 +1,30 @@
 <template>
-  <div>
-     다이어리 페이지
-     <Editor/>
+  <div class="diary-container">
+    <div>
+      <label>Title</label>
+      <b-form-textarea
+        id="textarea-rows"
+        placeholder="Enter enything you do"
+        rows="1"
+      ></b-form-textarea>
+    </div>
+
+    <div style="margin-top: 10px">
+      <label>Desciption</label>
+      <b-form-textarea
+        id="textarea-rows"
+        placeholder="Enter enything you do"
+        rows="20"
+      ></b-form-textarea>
+    </div>
   </div>
 </template>
 
 <script>
-import Editor from '../components/Editor.vue'
 
 export default {
     name: 'UploadDiary',
-    components : {Editor},
+    components : {},
     methods : {
 
     }
@@ -19,5 +33,11 @@ export default {
 </script>
 
 <style>
-
+  .diary-container {
+    width: 80%;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%);
+  }
 </style>

@@ -27,7 +27,7 @@
 
 
       <b-button type="submit" variant="primary">login</b-button>
-      <!-- <b-button type="reset" variant="danger">Reset</b-button> -->
+      <b-button type="button" @click="goJoin()" variant="blue">join</b-button>
     </b-form>
   </div>
 </template>
@@ -53,20 +53,21 @@ import axios from "axios";
       onSubmit(event) {
         event.preventDefault()
         console.log(this.form.email, this.form.password)
-        axios.post('http://localhost:8000/login',  
-            {
-               username : this.form.username,
-               password : this.form.password
-            }
+        axios.post('http://localhost:8000/login', {
+              username : this.form.username,
+              password : this.form.password
+          }
         ).then((res)=> {
             console.log('로그인 정보 :', res);
             if(res.status == 200){
                 console.log('로그인 성공')
+                localStorage.setItem('Authorization', res.headers.authorization)
                 this.$router.push('/')
             }
         })
-
-        //alert(JSON.stringify(this.form))
+      },
+      goJoin (){
+        this.$router.push('join');
       },
       onReset(event) {
         event.preventDefault()

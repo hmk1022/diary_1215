@@ -11,6 +11,8 @@
 <script>
 
 import Navigation from './components/Navigation'
+import axios from 'axios'
+axios.defaults.headers.common['Authorization'] = localStorage.getItem('Authorization');
 
 export default {
     name: "App",
@@ -18,8 +20,6 @@ export default {
     methods :{
       
     }
-
-
 }
 </script>
 <style lang="scss">

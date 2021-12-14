@@ -1,25 +1,28 @@
 <template>
   <div>
     <ScrollTop /> 
-    <div class="container"> 
+    <!-- <div class="container"> 
       <div v-for="card in spots" :key="card.url" >
           <Card v-bind:cardData="card"/>
       </div>
     </div>
-  <infinite-loading @infinite="infiniteHandler" spinner="waveDots">무한스크롤 끄읏 :)</infinite-loading>
+  <infinite-loading @infinite="infiniteHandler" spinner="waveDots">무한스크롤 끄읏 :)</infinite-loading> -->
+  메인페이지
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import {mapState} from 'vuex'
-import Card from '../components/Card.vue'
-import InfiniteLoading from "vue-infinite-loading";
+//import Card from '../components/Card.vue'
+//import InfiniteLoading from "vue-infinite-loading";
 import ScrollTop from '../components/ScrollTop.vue'
 
 export default {
   name: "Home",
-  components: { Card  , InfiniteLoading, ScrollTop },
+  components: { 
+    //Card  , InfiniteLoading, 
+    ScrollTop },
   data () {
     return {
       cards : this.$store.state.spotStore.spots,
